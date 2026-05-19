@@ -31,3 +31,21 @@
 
 ### Out of scope (kept simple per request)
 - No build tools, no JS framework, no dark mode, no real CMS.
+
+---
+
+# Todo — Push project to GitHub
+
+## Plan
+
+- [x] Confirm repo settings with the user — **name:** `vibe-coding-claude-code-demo`, **visibility:** public, **description:** "Editorial AI education site — Coursera Vibe Coding exercise"
+- [x] Create the remote repo and push in one shot via `gh repo create --source=. --remote=origin --push`
+- [x] Verify the push — `origin` set, `main` tracking `origin/main`
+- [x] Add a short review section below
+
+## Review
+
+- Created public repo at **https://github.com/handyana05/vibe-coding-claude-code-demo**
+- `gh repo create vibe-coding-claude-code-demo --public --description "…" --source=. --remote=origin --push` handled everything in one shot (no manual `git remote add` / `git push -u` needed)
+- Local `main` now tracks `origin/main`; future `git push` works without arguments
+- The only post-push change is this `tasks/todo.md` edit — commit and push it whenever you want the review section reflected on GitHub
