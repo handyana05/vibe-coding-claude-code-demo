@@ -1,4 +1,67 @@
-# Todo — Simple AI Educational Website
+# Todo — Restyle to Next.js-style dark UI
+
+## Plan
+
+Inspired by the supplied Next.js homepage screenshot. Keep all existing content (Studio/AI school copy, four-module curriculum, faculty, journal, etc.) — only restyle.
+
+- [x] **Theme**: flip the colour system from cream/ink to dark — near-black background (`#000`), off-white text, subtle hairline rules in low-opacity white
+- [x] **Nav**: tighten the navbar — small wordmark (with triangle mark) on left, plain text links in the middle, a "Search the school…  CtrlK" pill on the right, plus a dark "Enroll" button and a light "Learn" button
+- [x] **Hero**: huge bold sans-serif title, centred. Subtitle small and grey, with one phrase highlighted in solid white. Two centred pill buttons ("Get Started" white, "Learn Studio/AI" dark). Small terminal hint line beneath.
+- [x] **Hero background grid**: faint cross-hair lines + two small ring marks at the intersections, pure CSS, no images, no JS
+- [x] **"What's in Studio/AI?" section heading**: small heading on the left, lede on the right, above the curriculum grid
+- [x] **Cards**: curriculum / faculty / journal restyled as dark cards with thin borders and rounded corners
+- [x] **CTA band**: light band on dark page (kept the contrast break)
+- [x] **Footer**: dark, hairline-separated, same content
+- [x] **Verify visually**: see verification note below
+- [x] **Security pass**: see security note below
+- [x] **Add review section** to this file
+
+## Constraints (kept)
+
+- Still no JS, no build tools, no frameworks
+- Edited only `index.html` and `styles.css` — no new files
+- Markup is mostly the same; new elements: triangle mark on wordmark, search pill, Enroll/Learn buttons, hero grid + rings + terminal line, split section header for the curriculum
+
+## Review
+
+### What changed
+- **`styles.css`** — full restyle. New token set (dark background `#000`, surface `#0a0a0a`, ink `#ededed`, low-alpha rules), Inter bold takes over from Fraunces for display type. Fraunces is still loaded — the wordmark `Studio/AI` keeps its serif character so it doesn't disappear into the rest of the dark UI.
+- **`index.html`** — minimal markup adds:
+  - A `wordmark__mark` triangle (CSS `clip-path`, no SVG file)
+  - A `nav__tools` cluster: a non-functional `searchpill` (with `kbd` chip), an `Enroll` dark button, a `Learn` light button
+  - A new `hero__grid` containing two crosshair line pairs (CSS gradients) and two `hero__ring` circles at the intersections — pure CSS, no images
+  - Centred hero block with the new title, lede (with one phrase bolded in white), two pill buttons, terminal hint line
+  - A split `section__head--split` for the curriculum: heading on the left, lede on the right
+
+### Design choices worth flagging
+- **Hero grid + rings** are positional CSS — verticals at `24%` and `76%` of width, horizontals at `22%` and `78%` of height; the rings sit at the intersections. They scale with the viewport so the geometry stays consistent at any width.
+- **Backdrop blur on the nav** (`backdrop-filter`) gives the same translucent-when-scrolled feel as the reference. Falls back to a near-opaque dark background where unsupported.
+- **`searchpill` is a `<span>`**, not an `<input>` — intentionally not a real search box (no JS, no endpoint). It's a visual cue, just like the screenshot. I added `role="search"` so assistive tech still understands the region.
+- **Cards** (curriculum / faculty / journal) gained `1px` borders, `14px` rounded corners, and the images shifted from pure grayscale to `grayscale + brightness(0.7)` so they read on the dark surface instead of glowing.
+- **CTA band** is inverted (light on dark) — kept the contrast break the original design had, but flipped to suit the new theme.
+
+### Verification
+- **Not browser-verified by me** (I can't render the page from this environment). HTML and CSS are syntactically clean and the layout math is sane. Open `index.html` and check:
+  - Hero title wraps at desktop / ~768px / ~375px (it uses `clamp(2.5rem, 7.5vw, 6rem)`)
+  - Curriculum collapses 4 → 2 → 1
+  - Nav: search pill appears at ≥980px, link row appears at ≥820px, buttons always show
+  - No horizontal scroll on mobile
+  - Crosshair grid is visible but quiet (`rgba(255,255,255,0.07)`) — on a low-contrast monitor it may need a small bump
+
+### Security pass (per CLAUDE.md step 8)
+- **No JS** added — nothing to inject into.
+- **No new external endpoints** — same Google Fonts CSS link and `picsum.photos` placeholders that were already in the project. No `<script>`, no `<iframe>`, no `<form>`.
+- **No user input handled** — the search pill is decorative (a `<span>`, not `<input>`), so there is no XSS surface.
+- **No secrets** — only a `mailto:hello@studio.ai` link (already present, public address).
+- **`backdrop-filter`** has no security implication; it's a purely presentational property.
+- **`target="_blank"` etc.** — none introduced.
+
+### Out of scope (deliberately)
+- No JS, no real search, no dark/light toggle, no analytics, no CMS, no build pipeline. The brief was a visual restyle.
+
+---
+
+# Todo — Simple AI Educational Website (earlier)
 
 ## Checklist
 
