@@ -15,62 +15,74 @@
   <header class="nav">
     <div class="container nav__row">
       <a class="wordmark" href="#top" aria-label="Studio AI, home">
+        <span class="wordmark__mark" aria-hidden="true"></span>
         <span class="wordmark__a">Studio</span><span class="wordmark__slash">/</span><span class="wordmark__b">AI</span>
       </a>
       <nav class="nav__links" aria-label="Primary">
         <a href="#curriculum">Curriculum</a>
         <a href="#faculty">Faculty</a>
         <a href="#journal">Journal</a>
-        <a href="#enroll" class="nav__cta">Enroll&nbsp;→</a>
+        <a href="#about">Manifesto</a>
       </nav>
+      <div class="nav__tools">
+        <span class="searchpill" aria-hidden="true">
+          <span class="searchpill__label">Search the school…</span>
+          <kbd class="searchpill__kbd">CtrlK</kbd>
+        </span>
+        <a class="btn btn--dark" href="#enroll"><span class="btn__mark" aria-hidden="true"></span>Enroll</a>
+        <a class="btn btn--light" href="#curriculum">Learn</a>
+      </div>
     </div>
   </header>
 
   <main id="top">
 
-    <section class="hero container">
-      <p class="eyebrow">§ 01 — A school of machine intelligence</p>
-      <h1 class="hero__title">
-        Learn the<br />machines that<br />are learning&nbsp;us.
-      </h1>
-      <div class="hero__foot">
+    <section class="hero">
+      <div class="hero__grid" aria-hidden="true">
+        <span class="hero__ring hero__ring--tl"></span>
+        <span class="hero__ring hero__ring--br"></span>
+      </div>
+      <div class="container hero__inner">
+        <h1 class="hero__title">The School of Machine Intelligence</h1>
         <p class="hero__lede">
-          A four-part programme on the science, craft, and ethics of artificial intelligence — taught slowly, in small cohorts, by people who build it.
+          Used by students from the world&rsquo;s most curious companies, Studio/AI prepares you to <strong>build high-quality, principled AI systems</strong> with the depth of a serious education.
         </p>
-        <a class="link-arrow" href="#curriculum">See the curriculum&nbsp;→</a>
+        <div class="hero__cta">
+          <a class="pill pill--light" href="#enroll">Get Started</a>
+          <a class="pill pill--dark" href="#curriculum">Learn Studio/AI</a>
+        </div>
+        <p class="hero__terminal"><span class="hero__terminal-mark" aria-hidden="true"></span> ~ npx create-studio-ai@latest</p>
       </div>
     </section>
 
-    <hr class="rule container" />
-
     <section id="curriculum" class="container section">
-      <header class="section__head">
-        <p class="eyebrow">§ 02 — Curriculum</p>
-        <h2 class="section__title">Four parts, taught in sequence.</h2>
+      <header class="section__head section__head--split">
+        <h2 class="section__title section__title--inline">What&rsquo;s in Studio/AI?</h2>
+        <p class="section__lede">Everything you need to think clearly about machine intelligence.</p>
       </header>
       <ol class="index" aria-label="Course modules">
         <li class="index__item">
           <span class="index__num">01</span>
           <h3 class="index__name">Foundations</h3>
-          <img class="index__img" src="https://picsum.photos/seed/foundations/800/1000" alt="" loading="lazy" />
+          <img class="index__img" src="https://picsum.photos/seed/foundations/800/1000" alt="Foundations module" loading="lazy" />
           <p class="index__meta">Six weeks · Probability, optimisation, the maths that won't bite.</p>
         </li>
         <li class="index__item">
           <span class="index__num">02</span>
           <h3 class="index__name">Models</h3>
-          <img class="index__img" src="https://picsum.photos/seed/models/800/1000" alt="" loading="lazy" />
+          <img class="index__img" src="https://picsum.photos/seed/models/800/1000" alt="Models module" loading="lazy" />
           <p class="index__meta">Eight weeks · From perceptrons to transformers, by hand and by code.</p>
         </li>
         <li class="index__item">
           <span class="index__num">03</span>
           <h3 class="index__name">Alignment</h3>
-          <img class="index__img" src="https://picsum.photos/seed/alignment/800/1000" alt="" loading="lazy" />
+          <img class="index__img" src="https://picsum.photos/seed/alignment/800/1000" alt="Alignment module" loading="lazy" />
           <p class="index__meta">Four weeks · The problem of making machines do what we mean.</p>
         </li>
         <li class="index__item">
           <span class="index__num">04</span>
           <h3 class="index__name">Practice</h3>
-          <img class="index__img" src="https://picsum.photos/seed/practice/800/1000" alt="" loading="lazy" />
+          <img class="index__img" src="https://picsum.photos/seed/practice/800/1000" alt="Practice module" loading="lazy" />
           <p class="index__meta">Six weeks · A studio project, end-to-end, shipped publicly.</p>
         </li>
       </ol>
@@ -100,17 +112,17 @@
       </header>
       <ul class="faculty">
         <li class="faculty__card">
-          <img src="https://picsum.photos/seed/portrait-a/700/900" alt="" loading="lazy" />
+          <img src="https://picsum.photos/seed/portrait-a/700/900" alt="Portrait of Dr. Aiyana Mor" loading="lazy" />
           <h3 class="faculty__name">Dr. Aiyana Mor</h3>
           <p class="faculty__bio">Research scientist. Previously DeepMind, MIT CSAIL.</p>
         </li>
         <li class="faculty__card">
-          <img src="https://picsum.photos/seed/portrait-b/700/900" alt="" loading="lazy" />
+          <img src="https://picsum.photos/seed/portrait-b/700/900" alt="Portrait of Tomás Reinhardt" loading="lazy" />
           <h3 class="faculty__name">Tomás Reinhardt</h3>
           <p class="faculty__bio">Engineer-in-residence. Builds tools for evaluation and red-teaming.</p>
         </li>
         <li class="faculty__card">
-          <img src="https://picsum.photos/seed/portrait-c/700/900" alt="" loading="lazy" />
+          <img src="https://picsum.photos/seed/portrait-c/700/900" alt="Portrait of Prof. Lin Hyo-jin" loading="lazy" />
           <h3 class="faculty__name">Prof. Lin Hyo-jin</h3>
           <p class="faculty__bio">Philosopher of mind. Author of <em>The Borrowed Reason</em>.</p>
         </li>
@@ -150,6 +162,7 @@
   <footer class="footer container">
     <div class="footer__row">
       <a class="wordmark wordmark--footer" href="#top">
+        <span class="wordmark__mark" aria-hidden="true"></span>
         <span class="wordmark__a">Studio</span><span class="wordmark__slash">/</span><span class="wordmark__b">AI</span>
       </a>
       <div class="footer__cols">
